@@ -10,12 +10,9 @@ function CuboidMaker(length, width, height) {
     this.length = length;
     this.width = width;
     this.height = height;
-  
-  return `Length: ${length}, Width: ${width}, Height: ${height}`
 }
 
-console.log("- - - Task1")
-console.log(CuboidMaker(30,10,10))
+
 
 
 
@@ -24,6 +21,7 @@ console.log(CuboidMaker(30,10,10))
   
   Formula for cuboid volume: length * width * height
 */
+
 
 
 /* == Step 3: Surface Area Method ==
