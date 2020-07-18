@@ -18,7 +18,27 @@ myFunction();
 
 // Explanation: 
 
+/*   const External is a variable outside of the function and is in the global scope.
+
+    function myFunction has access to the global scope and is console logging the external variable
+
+    const internal variable is a variable inside of the function.
+
+    nestedFunction is a function inside the parent function. and is console logging the internal variable
+    
+    nestedFunction() is calling the nested function
+
+    myFunction() is calling the nested function
 
 /* Task 2: Counter */
 
 /* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+
+
+function summation(number) {
+  for (let i = 0; i < summation <= number; i++){
+    return summation
+  }
+}
+
+summation(4)

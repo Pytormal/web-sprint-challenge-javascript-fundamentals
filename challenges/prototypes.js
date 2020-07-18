@@ -22,7 +22,12 @@ function CuboidMaker(length, width, height) {
   Formula for cuboid volume: length * width * height
 */
 
+CuboidMaker.prototype.volume = function () {
+  return `length: ${this.length}` * `width: ${this.width}` * `height: ${this.height}` `is a Volume of:`;
+};
 
+const cube = new CuboidMaker(30,40,10);
+console.log(cube.volume());
 
 /* == Step 3: Surface Area Method ==
   Create another method using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
