@@ -21,13 +21,13 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 
-const displayNames = [];
-const newForEach(zooAnimals, function(animal_name, scientific_name){
-console.log(animal_name, scientific_name)
-})
+// const displayNames = [];
+// const newForEach(zooAnimals, function(animal_name, scientific_name){
+// console.log(animal_name, scientific_name)
+// })
 
-console.log("- - - Request 1")
-console.log(displayNames);
+// console.log("- - - Request 1")
+// console.log(displayNames);
 
 /* Request 2: .map()
 
@@ -37,7 +37,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 
 const lowCaseAnimalNames = zooAnimals.map((zooAnimals) => {
-  return zooAnimals.animal_name
+  return zooAnimals.animal_name.toLowerCase()
 })
 
 console.log("- - - Request 2")
@@ -52,7 +52,7 @@ The zoos are concerned about animals with a lower population count. Using filter
 
 
 const lowPopulationAnimals = zooAnimals.filter((zoo) => {
-  return zoo.population <= 5;
+  return zoo.population < 5;
 });
 
 console.log("- - - Request 3")
@@ -84,6 +84,10 @@ console.log(populationTotal);
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 
+function callback(a, b, cb) {
+  cb(a,b)
+}
+
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
@@ -92,15 +96,16 @@ console.log(populationTotal);
 */
 
 
+
+
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 // console.log(consume(2, 2, add)); // 4
 // console.log(consume(10, 16, multiply)); // 160
 // console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
-
-
-
-
 /*
+
+
+
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
