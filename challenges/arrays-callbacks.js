@@ -3,16 +3,66 @@
 // Given this zoo data from around the United States, follow the instructions below.  Use the specific array methods in the requests below to solve the problems.
 
 const zooAnimals = [
-  { animal_name: "Jackal, asiatic", population: 5, scientific_name: "Canis aureus", state: "Kentucky" },
-  { animal_name: "Screamer, southern", population: 1, scientific_name: "Chauna torquata", state: "Alabama" },
-  { animal_name: "White spoonbill", population: 8, scientific_name: "Platalea leucordia", state: "Georgia" },
-  { animal_name: "White-cheeked pintail", population: 1, scientific_name: "Anas bahamensis", state: "Oregon" },
-  { animal_name: "Black-backed jackal", population: 2, scientific_name: "Canis mesomelas", state: "Washington" },
-  { animal_name: "Brolga crane", population: 9, scientific_name: "Grus rubicundus", state: "New Mexico" },
-  { animal_name: "Common melba finch", population: 5, scientific_name: "Pytilia melba", state: "Pennsylvania" },
-  { animal_name: "Pampa gray fox", population: 10, scientific_name: "Pseudalopex gymnocercus", state: "Connecticut" },
-  { animal_name: "Hawk-eagle, crowned", population: 10, scientific_name: "Spizaetus coronatus", state: "Florida" },
-  { animal_name: "Australian pelican", population: 5, scientific_name: "Pelecanus conspicillatus", state: "West Virginia" },
+  {
+    animal_name: "Jackal, asiatic",
+    population: 5,
+    scientific_name: "Canis aureus",
+    state: "Kentucky",
+  },
+  {
+    animal_name: "Screamer, southern",
+    population: 1,
+    scientific_name: "Chauna torquata",
+    state: "Alabama",
+  },
+  {
+    animal_name: "White spoonbill",
+    population: 8,
+    scientific_name: "Platalea leucordia",
+    state: "Georgia",
+  },
+  {
+    animal_name: "White-cheeked pintail",
+    population: 1,
+    scientific_name: "Anas bahamensis",
+    state: "Oregon",
+  },
+  {
+    animal_name: "Black-backed jackal",
+    population: 2,
+    scientific_name: "Canis mesomelas",
+    state: "Washington",
+  },
+  {
+    animal_name: "Brolga crane",
+    population: 9,
+    scientific_name: "Grus rubicundus",
+    state: "New Mexico",
+  },
+  {
+    animal_name: "Common melba finch",
+    population: 5,
+    scientific_name: "Pytilia melba",
+    state: "Pennsylvania",
+  },
+  {
+    animal_name: "Pampa gray fox",
+    population: 10,
+    scientific_name: "Pseudalopex gymnocercus",
+    state: "Connecticut",
+  },
+  {
+    animal_name: "Hawk-eagle, crowned",
+    population: 10,
+    scientific_name: "Spizaetus coronatus",
+    state: "Florida",
+  },
+  {
+    animal_name: "Australian pelican",
+    population: 5,
+    scientific_name: "Pelecanus conspicillatus",
+    state: "West Virginia",
+  },
 ];
 
 /* Request 1: .forEach()
@@ -35,14 +85,12 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-
 const lowCaseAnimalNames = zooAnimals.map((zooAnimals) => {
-  return zooAnimals.animal_name.toLowerCase()
-})
+  return zooAnimals.animal_name.toLowerCase();
+});
 
-console.log("- - - Request 2")
-console.log(lowCaseAnimalNames)
-
+console.log("- - - Request 2");
+console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
 
@@ -50,14 +98,12 @@ The zoos are concerned about animals with a lower population count. Using filter
 
 */
 
-
 const lowPopulationAnimals = zooAnimals.filter((zoo) => {
   return zoo.population < 5;
 });
 
-console.log("- - - Request 3")
+console.log("- - - Request 3");
 console.log(lowPopulationAnimals);
-
 
 /* Request 4: .reduce() 
 
@@ -65,55 +111,60 @@ The zoos need to know their total animal population across the United States. Fi
 
 */
 
-
 // let populationTotal = 0;
 const populationTotal = zooAnimals.reduce((total, zoo) => {
-  return total += zoo.population;
-}, 0)
+  return (total += zoo.population);
+}, 0);
 
-console.log("- - - Request 4")
+console.log("- - - Request 4");
 console.log(populationTotal);
 
-
-// ==== Callbacks ====  
+// ==== Callbacks ====
 
 /* Step 1: Create a higher-order function
-  * Create a higher-order function named consume with 3 parameters: a, b and cb
-  * The first two parameters can take any argument (we can pass any value as argument)
-  * The last parameter accepts a callback
-  * The consume function should return the invocation of cb, passing a and b into cb as arguments
-*/
+ * Create a higher-order function named consume with 3 parameters: a, b and cb
+ * The first two parameters can take any argument (we can pass any value as argument)
+ * The last parameter accepts a callback
+ * The consume function should return the invocation of cb, passing a and b into cb as arguments
+ */
 
-function ab(a, b) {
-  console.log(`a: ${a} b: ${b}`)
+function consume(a, b, cb) {
+  return cb(a, b);
 }
-function consume(cb) {
-  let a = "a"
-  let b = "b"
-  cb(a,b)
-}
-
-consume(a, b);
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
+ 
   * Create a function named multiply that returns the product of two numbers 
+ 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+function add(a, b) {
+  let answer = a + b;
+  return answer;
+}
 
+function multiply(a, b) {
+  let answer = a * b;
+  return answer;
+}
 
+function greeting(a, b) {
+  let answer = `Hello ${a} ${b}, nice to meet you.`;
+  return answer;
+}
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// console.log(consume(2, 2, add)); // 4
-// console.log(consume(10, 16, multiply)); // 160
-// console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log("- - - Step 3 Callbacks")
+
+
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+
 /*
-
-
-
-
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
-
