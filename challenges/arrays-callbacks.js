@@ -74,15 +74,17 @@ The zoos want to display both the scientific name and the animal name in front o
 console.log("- - - Request 1")
 
 const displayNames = [];
-displayNames.forEach(newArray[ zooAnimals => console.log(zooAnimals));
+zooAnimals.forEach(function (object) {
+  displayNames.push({ Display: `Animal NAme: ${object.animal_name}, Scientific Name: ${object.scientific_name}` })
+})
+console.log(displayNames)
 
-
-// const newForEach(zooAnimals, function) =(animal_name, scientific_name){
-// console.log(animal_name, scientific_name)
+// const state = []
+// zooAnimals.forEach(function (object){
+//   state.push({Display: `Sate: ${object.state}, Animal Name: ${object.animal_name}`})
 // })
+// console.log(state)
 
-
-// console.log(displayNames);
 
 /* Request 2: .map()
 
